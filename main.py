@@ -6,7 +6,7 @@ merit_positions = [79, 85, 99, 117, 128, 139, 159, 167, 188, 213, 219, 220, 228,
 def get_updates(bot_token, offset=None):
     """Fetches new updates from the Telegram Bot API."""
     base_url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
-    params = {"offset": offset, "timeout": 100}
+    params = {"offset": offset, "timeout": 60}
 
     try:
         response = requests.get(base_url, params=params)
