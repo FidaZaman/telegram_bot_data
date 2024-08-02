@@ -1,7 +1,7 @@
 import requests
 import time
 
-merit_positions = [79, 85, 99, 117, 128, 139, 159, 167, 188, 213, 219, 220, 228, 232, 254, 276, 300, 301, 217, 259, 97]
+merit_positions = [79, 85, 99, 117, 128, 139, 159, 167, 188, 213, 219, 220, 228, 232, 254, 276, 300, 301, 217, 259, 97, 138, 299]
 
 def get_updates(bot_token, offset=None):
     """Fetches new updates from the Telegram Bot API."""
@@ -87,7 +87,7 @@ def main():
                             position = int(merit_position)
 
                             if position in merit_positions:
-                                image_url = f"https://raw.githubusercontent.com/FidaZaman/telegram_bot_data/main/images/image03/{position}.png"
+                                image_url = f"https://raw.githubusercontent.com/FidaZaman/telegram_bot_data/main/images/image02/{position}.png"
                                 send_image(bot_token, chat_id, image_url)
                             else:
                                 send_message(bot_token, chat_id, "Merit position not found.")
