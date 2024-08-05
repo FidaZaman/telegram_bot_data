@@ -130,6 +130,7 @@ def send_email(receiver_email, otp):
     </head>
     <body>
         <div class="container">
+            <img src="https://i.ibb.co/zxJbj56/6a5f23b9-de12-48ec-9134-192d4a40b97a-removebg-preview.png" width="150px">
             <h1>Verification Code</h1>
             <p>Dear Polapan,</p>
             <p>আমি জানি তোদের একটু প্যারা দিতেসি। বাট কি করার, ইনফর্মেশন গুলা সেন্সিটিভ। এই OTP (One-Time Password) টা ইউস কর ভেরিফিকেশনের জন্য : </p>
