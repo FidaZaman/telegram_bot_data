@@ -247,7 +247,7 @@ def main():
                                 send_message(bot_token, chat_id, "OTP verified successfully.")
                                 # Send the image
                                 position = next((pos for pos, email in merit_positions.items() if email == merit_positions[position]), None)
-                                image_url = f"https://raw.githubusercontent.com/FidaZaman/telegram_bot_data/main/images/img03/{position}.png"
+                                image_url = f"https://raw.githubusercontent.com/FidaZaman/telegram_bot_data/main/images/image02/{position}.png"
                                 send_image(bot_token, chat_id, image_url)
                             else:
                                 send_message(bot_token, chat_id, "Invalid OTP. Please try again.")
