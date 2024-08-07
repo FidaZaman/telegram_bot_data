@@ -186,7 +186,7 @@ def generate_otp():
 def main():
     """Main function to run the Telegram bot."""
     # Replace with your actual bot token (DO NOT SHARE THIS PUBLICLY)
-    bot_token = "7298476252:AAHVL2Tlyq3nFyqw-fQCbLgIO1efRnnRq3E"
+    bot_token = "Your_Bot_Tocken"
 
     offset = None
     awaiting_position = {}
