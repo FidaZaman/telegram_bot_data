@@ -27,6 +27,7 @@ merit_positions = {
     232: "azharul151965@gmail.com",
     254: "famanamra1@gmail.com",
     259: "farihazannat03@gmail.com",
+    272 : "mdrahatbinsijan@gmail.com",
     276: "tanvir004006@gmail.com",
     299: "saracupric2127@gmail.com",
     300: "nafistahmid0@gmail.com",
@@ -167,7 +168,7 @@ def get_email_hint(email):
     """Returns a hint of the email address for security."""
     local, domain = email.split('@')
     # Show the first and last character of the local part, with asterisks in between
-    email_hint = f"{local[0]}{'*' * (len(local) - 2)}{local[-1]}@{domain}"
+    email_hint = f"{local[0]}{local[1]}{'*' * (len(local) - 3)}{local[-1]}@{domain}"
     return email_hint
 
 def is_valid_merit_position(merit_position):
@@ -185,7 +186,7 @@ def generate_otp():
 def main():
     """Main function to run the Telegram bot."""
     # Replace with your actual bot token (DO NOT SHARE THIS PUBLICLY)
-    bot_token = "your_bot_token"
+    bot_token = "7298476252:AAHVL2Tlyq3nFyqw-fQCbLgIO1efRnnRq3E"
 
     offset = None
     awaiting_position = {}
@@ -209,7 +210,8 @@ def main():
                     text = message["text"].strip().lower()
 
                     if text.startswith("/check"):
-                        send_message(bot_token, chat_id, "Please enter the merit position you wish to check.")
+                        user_name = message["chat"]["first_name"]+ " "+ message["chat"]["last_name"]
+                        send_message(bot_token, chat_id, f"Hello,{user_name}\nPlease enter your Technology Unit merit position.")
                         awaiting_position[chat_id] = "awaiting_position"
                     elif chat_id in awaiting_position:
                         if awaiting_position[chat_id] == "awaiting_position":
@@ -218,7 +220,7 @@ def main():
                             if is_valid_merit_position(merit_position):
                                 position = int(merit_position)
                                 if position in merit_positions:
-                                    if position==0:
+                                    if position==301:
                                         user_name = message["chat"]["first_name"]+ " "+ message["chat"]["last_name"]
                                         send_message(bot_token, chat_id, f"sorry {user_name}!\nregular student 2 jon komse tai scholership er jonno o ekjon kome gese. tai tor nam bad pore gese list theke.\nmon kharap koris na.")
                                     else:
