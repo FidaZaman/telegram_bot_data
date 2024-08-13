@@ -91,56 +91,61 @@ def send_email(receiver_email, otp):
     <html>
     <head>
         <style>
-            body {{
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f9;
-                margin: 0;
-                padding: 0;
-            }}
-            .container {{
-                width: 100%;
-                max-width: 600px;
-                margin: 0 auto;
-                background-color: #ffffff;
-                padding: 20px;
-                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-            }}
+            body{{
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f9;
+                    margin: 0;
+                    padding: 0;
+                }}
+            .container{{
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #ffffff;
+                    padding: 20px;
+                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+                }}
+
             h1 {{
-                color: #4CAF50;
-            }}
+                    color: #4CAF50;
+                }}
+
             p {{
-                font-size: 16px;
-                color: #333333;
-            }}
+                    font-size: 16px;
+                    color: #333333;
+                }}
+
             .otp {{
-                font-size: 24px;
-                font-weight: bold;
-                color: #FF5722;
-                padding: 10px 0;
-                background-color: #f9f9f9;
-                border-radius: 5px;
-                display: inline-block;
-            }}
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #FF5722;
+                    padding: 10px 0;
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                    display: inline-block;
+                }}
+
             .footer {{
-                margin-top: 20px;
-                font-size: 12px;
-                color: #999999;
-                text-align: center;
-            }}
+                    margin-top: 20px;
+                    font-size: 12px;
+                    color: #999999;
+                    text-align: center;
+                }}
         </style>
     </head>
+
     <body>
         <div class="container">
             <img src="https://i.ibb.co/zxJbj56/6a5f23b9-de12-48ec-9134-192d4a40b97a-removebg-preview.png" width="150px">
-            <h1>Verification Code</h1>
-            <p>Dear Polapan,</p>
-            <p>আমি জানি তোদের একটু প্যারা দিতেসি। বাট কি করার, ইনফর্মেশন গুলা সেন্সিটিভ। এই OTP (One-Time Password) টা ইউস কর ভেরিফিকেশনের জন্য : </p>
+            <h1>Your Code is Here! 🎉</h1>
+            <p>Hey Polapan,</p>
+            <p>Yeah, I know I’m interrupting, but this is important! 😜</p>
+            <p>Here’s your OTP (One-Time Password). Use it to get things done:</p>
             <div class="otp">{otp}</div>
-            <p>If you did not request this code, please ignore this email.</p>
+            <p>Use it fast before it disappears into the ether! If you didn’t ask for this, just pretend this never happened. 🤷‍♂️</p>
             <div class="footer">
-                <p>&copy; 2024 Fida Zaman. All rights reserved.</p>
+                <p>&copy; 2024 Fida Zaman. All rights reserved, but no hard feelings!</p>
             </div>
-        </div>
     </body>
     </html>
     """
@@ -210,7 +215,7 @@ def main():
                     text = message["text"].strip().lower()
 
                     if text.startswith("/check"):
-                        user_name = message["chat"]["first_name"]+ " "+ message["chat"]["last_name"]
+                        user_name = message["chat"]["first_name"]
                         send_message(bot_token, chat_id, f"Hello,{user_name}\nPlease enter your Technology Unit merit position.")
                         awaiting_position[chat_id] = "awaiting_position"
                     elif chat_id in awaiting_position:
@@ -221,7 +226,6 @@ def main():
                                 position = int(merit_position)
                                 if position in merit_positions:
                                     if position==301:
-                                        user_name = message["chat"]["first_name"]+ " "+ message["chat"]["last_name"]
                                         send_message(bot_token, chat_id, f"sorry {user_name}!\nregular student 2 jon komse tai scholership er jonno o ekjon kome gese. tai tor nam bad pore gese list theke.\nmon kharap koris na.")
                                     else:
                                         # Generate OTP and send email
