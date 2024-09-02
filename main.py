@@ -89,65 +89,68 @@ def send_email(receiver_email, otp):
        # Create the HTML content
     html_content = f"""
     <html>
-    <head>
-        <style>
-            body{{
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f9;
-                    margin: 0;
-                    padding: 0;
-                }}
-            .container{{
-                    width: 100%;
-                    max-width: 600px;
-                    margin: 0 auto;
-                    background-color: #ffffff;
-                    padding: 20px;
-                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-                }}
 
-            h1 {{
-                    color: #4CAF50;
-                }}
+<head>
+    <style>
+        body{{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+            }}
+        .container{{
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: #ffffff;
+                padding: 20px;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            }}
 
-            p {{
-                    font-size: 16px;
-                    color: #333333;
-                }}
+        h1 {{
+                color: #4CAF50;
+            }}
 
-            .otp {{
-                    font-size: 24px;
-                    font-weight: bold;
-                    color: #FF5722;
-                    padding: 10px 0;
-                    background-color: #f9f9f9;
-                    border-radius: 5px;
-                    display: inline-block;
-                }}
+        p {{
+                font-size: 16px;
+                color: #333333;
+            }}
 
-            .footer {{
-                    margin-top: 20px;
-                    font-size: 12px;
-                    color: #999999;
-                    text-align: center;
-                }}
-        </style>
-    </head>
+        .otp {{
+                font-size: 24px;
+                font-weight: bold;
+                color: #FF5722;
+                padding: 10px 0;
+                background-color: #f9f9f9;
+                border-radius: 5px;
+                display: inline-block;
+            }}
 
-    <body>
-        <div class="container">
-            <img src="https://i.ibb.co/zxJbj56/6a5f23b9-de12-48ec-9134-192d4a40b97a-removebg-preview.png" width="150px">
-            <h1>Your Code is Here! 🎉</h1>
-            <p>Hey Polapan,</p>
-            <p>Yeah, I know I’m interrupting, but this is important! 😜</p>
-            <p>Here’s your OTP (One-Time Password). Use it to get things done:</p>
-            <div class="otp">{otp}</div>
-            <p>Use it fast before it disappears into the ether! If you didn’t ask for this, just pretend this never happened. 🤷‍♂️</p>
-            <div class="footer">
-                <p>&copy; 2024 Fida Zaman. All rights reserved, but no hard feelings!</p>
-            </div>
-    </body>
-    </html>
+        .footer {{
+                margin-top: 20px;
+                font-size: 12px;
+                color: #999999;
+                text-align: center;
+            }}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://i.ibb.co/zxJbj56/6a5f23b9-de12-48ec-9134-192d4a40b97a-removebg-preview.png" width="150px">
+        <h1>Your Code is Here! 🎉</h1>
+        <p>Hey Polapan,</p>
+        <p>Yeah, I know I’m interrupting, but this is important! 😜</p>
+        <p>Here’s your OTP (One-Time Password). Use it to get things done:</p>
+        <div class="otp">{otp}</div>
+        <p>Use it fast before it disappears into the ether! If you didn’t ask for this, just pretend this never
+            happened. 🤷‍♂️</p>
+        <div class="footer">
+            <p>&copy; 2024 Fida Zaman. All rights reserved, but no hard feelings!</p>
+        </div>
+</body>
+
+</html>
     """
 
     # Create a MIMEText object with HTML content
@@ -191,7 +194,7 @@ def generate_otp():
 def main():
     """Main function to run the Telegram bot."""
     # Replace with your actual bot token (DO NOT SHARE THIS PUBLICLY)
-    bot_token = "Your_Bot_Tocken"
+    bot_token = "7298476252:AAHqANEycXolIHxsUA3Yv_fVv-4mLhVsA4s"
 
     offset = None
     awaiting_position = {}
